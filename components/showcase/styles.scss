@@ -6,7 +6,7 @@ $ROOT: shared.makeRoot("Showcase");
 }
 
 #{$ROOT} {
-  @apply text-center px-5 bg-gray-800;
+  @apply text-center px-5 bg-gray-800 text-white;
 }
 
 #{el("image-container")} {
