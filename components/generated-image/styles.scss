@@ -18,13 +18,13 @@ $ROOT: shared.makeRoot("GeneratedImage");
 }
 
 #{el("prompt")} {
-  @apply text-white border-2 border-white py-2 rounded text-xl border-solid w-full mx-auto font-mono my-0;
+  @apply text-white border-2 border-white py-2 rounded text-xl border-solid w-full mx-auto font-mono my-0 text-white;
 }
 
 #{el("buttons")} {
-  @apply w-full bg-transparent border-2 border-solid border-white mx-auto text-xl rounded cursor-pointer py-2 flex;
+  @apply w-full bg-transparent border-2 border-solid border-white mx-auto text-xl rounded cursor-pointer py-2 flex text-white;
 }
 
 #{el("button")} {
-  @apply w-full bg-transparent border-none mx-auto text-xl cursor-pointer font-mono hover:underline underline-offset-4;
+  @apply w-full bg-transparent border-none mx-auto text-xl cursor-pointer font-mono hover:underline underline-offset-4 text-white;
 }
