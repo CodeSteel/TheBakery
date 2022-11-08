@@ -36,6 +36,11 @@ export function Showcase(): ReactElement {
           </div>
         ))}
       </div>
+      {bakedImages?.length === 0 && (
+        <div className={el`no-images`}>
+          <p>Sorry, nothing to show. Try generating something!</p>
+        </div>
+      )}
     </div>
   );
 }

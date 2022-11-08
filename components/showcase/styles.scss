@@ -16,3 +16,7 @@ $ROOT: shared.makeRoot("Showcase");
 #{el("title")} {
   @apply font-bold drop-shadow-lg;
 }
+
+#{el("no-images")} {
+  @apply text-2xl text-gray-400 items-center text-center justify-center mx-auto;
+}

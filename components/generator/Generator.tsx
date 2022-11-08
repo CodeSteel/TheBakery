@@ -18,8 +18,11 @@ export function Generator(): ReactElement {
 
   useEffect(() => {
     async function init() {
-      const _apiKey = (await localStorage.getItem("apiKey")) || "[]";
-      setapiKey(_apiKey);
+      const _apiKey = await localStorage.getItem("apiKey");
+
+      if (_apiKey) {
+        setapiKey(_apiKey);
+      }
     }
     init();
 
@@ -87,12 +90,10 @@ export function Generator(): ReactElement {
   const handleSaveKey = (e: any) => {
     e?.preventDefault();
 
-    localStorage.setItem("apiKey", apiKey ?? "");
-    inputRef.current?.value && (inputRef.current.value = "");
-  };
+    setapiKey(inputRef.current?.value);
 
-  const handleKeyUpdate = (e: any) => {
-    setapiKey(e.target.value);
+    localStorage.setItem("apiKey", inputRef.current?.value ?? "");
+    inputRef.current?.value && (inputRef.current.value = "");
   };
 
   const handleUpdateText = (e: any) => {
@@ -106,7 +107,6 @@ export function Generator(): ReactElement {
           type="password"
           id="prompt"
           name="prompt"
-          onChange={handleKeyUpdate}
           placeholder={
             apiKey
               ? "key has been saved to local storage!"

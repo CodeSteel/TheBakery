@@ -6,7 +6,7 @@ $ROOT: shared.makeRoot("Footer");
 }
 
 #{$ROOT} {
-  @apply w-full flex justify-center items-center bg-gray-900 text-white mt-10 mb-0;
+  @apply w-full flex justify-center items-center bg-gray-900 text-white mt-5 mb-0;
 }
 
 #{el("love-link")} {
