@@ -1,0 +1,26 @@
+@use "./../../utils/_shared";
+
+$ROOT: shared.makeRoot("Header");
+@function el($name) {
+  @return shared.makeSubElementName($ROOT, $name);
+}
+
+#{$ROOT} {
+  @apply w-full flex flex-col bg-gray-800 items-center space-y-5 py-5;
+}
+
+#{el("header-card")} {
+  @apply w-[47.5%] break-words px-6 border border-white border-solid h-fit rounded shadow-xl;
+
+  & > h1 {
+    @apply text-3xl font-bold;
+  }
+
+  & > h2 {
+    @apply text-lg;
+  }
+}
+
+#{el("red")} {
+  @apply text-red-400;
+}

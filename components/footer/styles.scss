@@ -1,0 +1,14 @@
+@use "./../../utils/_shared";
+
+$ROOT: shared.makeRoot("Footer");
+@function el($name) {
+  @return shared.makeSubElementName($ROOT, $name);
+}
+
+#{$ROOT} {
+  @apply w-full flex justify-center items-center bg-gray-900 text-white mt-10 mb-0;
+}
+
+#{el("love-link")} {
+  @apply underline-offset-4 text-white font-semibold;
+}

@@ -1,0 +1,36 @@
+@use "./../../utils/_shared";
+
+$ROOT: shared.makeRoot("Generator");
+@function el($name) {
+  @return shared.makeSubElementName($ROOT, $name);
+}
+
+#{$ROOT} {
+  @apply w-full justify-center flex flex-col items-center space-y-5;
+}
+
+#{el("form")} {
+  @apply flex flex-row justify-center w-[50%];
+
+  & > input {
+    @apply text-lg outline-none border border-white border-solid bg-transparent px-3 mx-auto w-full py-2 shadow-xl;
+    @apply rounded rounded-tr-none rounded-br-none;
+    &::placeholder {
+      @apply text-gray-400;
+    }
+  }
+
+  & > button {
+    @apply p-2 bg-transparent text-lg border border-white border-solid outline-none shadow-none drop-shadow-none cursor-pointer transition-colors duration-300 mx-auto w-[15%] shadow-xl;
+    @apply rounded rounded-tl-none rounded-bl-none border-l-0;
+    @apply hover:bg-gray-600 uppercase;
+  }
+}
+
+#{el("generating")} {
+  @apply text-gray-500 cursor-none hover:bg-none;
+  &:hover {
+    background: none !important;
+    cursor: auto !important;
+  }
+}

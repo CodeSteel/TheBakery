@@ -1,0 +1,30 @@
+@use "./../../utils/_shared";
+
+$ROOT: shared.makeRoot("GeneratedImage");
+@function el($name) {
+  @return shared.makeSubElementName($ROOT, $name);
+}
+
+#{$ROOT} {
+  @apply relative flex flex-col space-y-5;
+}
+
+#{el("image")} {
+  @apply w-full h-full object-cover rounded-xl py-0;
+}
+
+#{el("extras")} {
+  @apply w-full flex flex-col space-y-3;
+}
+
+#{el("prompt")} {
+  @apply text-white border-2 border-white py-2 rounded text-xl border-solid w-full mx-auto font-mono my-0;
+}
+
+#{el("buttons")} {
+  @apply w-full bg-transparent border-2 border-solid border-white mx-auto text-xl rounded cursor-pointer py-2 flex;
+}
+
+#{el("button")} {
+  @apply w-full bg-transparent border-none mx-auto text-xl cursor-pointer font-mono hover:underline underline-offset-4;
+}

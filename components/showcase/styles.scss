@@ -1,0 +1,18 @@
+@use "./../../utils/_shared";
+
+$ROOT: shared.makeRoot("Showcase");
+@function el($name) {
+  @return shared.makeSubElementName($ROOT, $name);
+}
+
+#{$ROOT} {
+  @apply text-center px-5 bg-gray-800;
+}
+
+#{el("image-container")} {
+  @apply w-full h-full grid justify-center items-center grid-cols-4 gap-5;
+}
+
+#{el("title")} {
+  @apply font-bold drop-shadow-lg;
+}
